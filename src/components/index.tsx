@@ -37,6 +37,9 @@ export const GlobalStyles = createGlobalStyle`
     background: #f6f9fc;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
+    transition: background 0.2s ease-in;
+    background: url(${bg}) no-repeat center bottom fixed;
+    background-size: cover;
   }
   p {
     font-size: 1.2rem;
@@ -62,10 +65,6 @@ export const BodyContainer = styled.div`
   min-height: 70vh;
   margin: 1rem;
   box-sizing: border-box;
-  background-size: cover;
-  transition: background 0.2s ease-in;
-  background: url(${bg}) no-repeat center bottom fixed;
-  background-size: cover;
 `;
 export const AppContainer = styled.div`
   /* background-color: #fcfcfc; */

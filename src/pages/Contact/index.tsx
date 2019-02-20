@@ -151,7 +151,10 @@ const ContactPage: React.SFC<ContactProps> = () => {
                       <button
                         type='button'
                         onClick={() => setAccept(true)}
-                        style={{ outline: 0, boxSizing: 'border-box', background: accept ? 'green' : '#ccc' }}
+                        style={{
+                          outline: 0,
+                          boxSizing: 'border-box',
+                          background: accept ? 'green' : '#ccc' }}
                       >
                         POLITELY ACCCEPT{accept && <>&#10004;</>}
                       </button>

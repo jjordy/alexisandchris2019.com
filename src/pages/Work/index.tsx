@@ -36,16 +36,6 @@ const WorkPage: React.SFC<WorkProps> = () => {
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
               </Segment>
             </SlideUp>
-            <SlideUp>
-              <Segment>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
-              </Segment>
-            </SlideUp>
-            <SlideOver>
-              <Segment>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
-              </Segment>
-            </SlideOver>
           </Grid>
 
         </MobileFriendlyContainer>
