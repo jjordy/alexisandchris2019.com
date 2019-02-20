@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Router, Location } from "@reach/router";
 import posed, { PoseGroup } from "react-pose";
 import { Link } from "@reach/router";
+import bg from './bg2.jpg'
 
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 50, beforeChildren: 50 },
@@ -30,14 +31,16 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    transition: background 0.2s ease-in;
-    font-family: 'Open Sans', sans-serif;
+    background: #f6f9fc;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
   }
   p {
     font-size: 1.2rem;
-    color: #7E7F82;
+    color: #222;
     line-height: 2rem;
   }
   .hidden {
@@ -48,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
     color: rgb(239, 171, 31);
   }
   h1, h2, h3, h4, h5 ,h6 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Amatic SC', cursive;
   }
   hr {
     border-top: 1px solid #e7e7e7;
@@ -56,11 +59,16 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const BodyContainer = styled.div`
-  min-height: 100vh;
-  padding: 1rem;
+  min-height: 70vh;
+  margin: 1rem;
+  box-sizing: border-box;
+  background-size: cover;
+  transition: background 0.2s ease-in;
+  background: url(${bg}) no-repeat center bottom fixed;
+  background-size: cover;
 `;
 export const AppContainer = styled.div`
-  background-color: #fff;
+  /* background-color: #fcfcfc; */
   min-height: calc(100vh - 4rem);
   display: flex;
   @media (max-width: 768px) {
@@ -70,20 +78,20 @@ export const AppContainer = styled.div`
 
 export const Navigation = styled.nav`
   box-sizing: border-box;
-  min-width: 10%;
-  background: #222;
-  padding: 1rem;
-  flex-direction: column;
-  justify-content: center;
+  width: 25%;
+  background: transparent;
+  flex-direction: row;
+  justify-content: space-between;
   display: flex;
   & a {
     justify-content: space-between;
     display: flex;
     align-items: center;
+    font-family: 'Amatic SC', cursive;
     text-decoration: none;
-    color: #fff;
+    color: #222;
     line-height: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   & svg {
     width: 24px;
@@ -130,7 +138,6 @@ export const MobileNavigation = styled.nav`
 
 export const MainContent = styled.div`
   width: 90%;
-  padding: 1rem;
   min-height: calc(100vh - 10rem);
   @media (max-width: 768px) {
     width: 100%;
@@ -143,7 +150,6 @@ export const Footer = styled.div`
   align-items: center;
   min-width: 100%;
   color: #fff;
-  padding: 1rem;
   font-weight: 700;
 `;
 
@@ -154,8 +160,9 @@ export const Center = styled.div`
 `;
 
 export const Header = styled(Link)`
-  font-size: 2rem;
-  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  font-family: 'Amatic SC', cursive;
+  color: #222;
   text-decoration: none;
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -212,6 +219,7 @@ export const Arrow = styled.div`
 export const MobileButton = styled.button`
   display: none;
   border: none;
+  margin: 1rem;
   background-color: transparent;
   & svg {
     width: 32px;
@@ -219,6 +227,21 @@ export const MobileButton = styled.button`
   }
   @media (max-width: 768px) {
     display: block;
+  }
+`;
+
+export const Segment = styled.div`
+  box-shadow: 1px 1px 1px #e7e7e7;
+  background-color: #FFF;
+  padding: 1rem;
+  margin: 1rem;
+`
+
+export const MobileFriendlyContainer = styled.div`
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

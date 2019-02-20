@@ -2,144 +2,113 @@ import React, { useState } from "react";
 
 import {
   AppContainer,
-  Footer,
-  Navigation,
   GlobalStyles,
   MainContent,
   BodyContainer,
-  Header,
   Flex,
-  MobileButton
+  MobileButton,
+  Navigation,
 } from ".";
 import { Link } from "@reach/router";
-import Github from "./Icons/GithubIcon";
-import Envelope from "./Icons/EnvelopeIcon";
-import Desktop from "./Icons/DesktopIcon";
-import HomeIcon from "./Icons/HomeIcon";
 import Bars from "./Icons/BarsIcon";
-import { useDynamicRgb } from "../hooks";
 import Sidebar from "./Sidebar";
 import posed from "react-pose";
+import styled from 'styled-components'
 
-const AnimatedContent = posed.div({
-  open: { x: 250 },
-  closed: { x: 0 }
-});
+const MobileFriendlyContainer = styled.div`
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const DesktopLinks = styled.div`
+  & a {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #222;
+    font-family: 'Amatic SC', cursive;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
 
 const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
-  const colorOne = useDynamicRgb([51, 171, 177], {
-    interval: 300,
-    disabled: false
-  });
-  const colorTwo = useDynamicRgb([239, 171, 31], {
-    interval: 250,
-    disabled: false
-  });
   const [sidebarOpen, toggleSidebar] = useState(false);
-  const activeLink = ({ isCurrent }: { isCurrent: boolean }) => {
-    return {
-      style: {
-        color: isCurrent ? `rgb(${colorTwo.join(",")})` : "#FFF",
-        fill: isCurrent ? `rgb(${colorTwo.join(",")})` : "#FFF"
-      }
-    };
-  };
-
   return (
     <BodyContainer
-      style={{
-        background: `linear-gradient(-45deg, rgb(${colorOne.join(
-          ","
-        )}), rgb(${colorTwo.join(",")}))`
-      }}
     >
       <GlobalStyles />
       <Sidebar open={sidebarOpen}>
         <Link to="/" onClick={() => toggleSidebar(false)}>
-          Home
-          <HomeIcon />
+          HOME
         </Link>
-        <Link to="/work" onClick={() => toggleSidebar(false)}>
-          Work
-          <Desktop />
+        <Link to="/accommodations" onClick={() => toggleSidebar(false)}>
+          ACCOMMODATIONS
         </Link>
-        <Link to="/contact" onClick={() => toggleSidebar(false)}>
-          Contact
-          <Envelope />
+        <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
+          RSVP
         </Link>
-        <a href="https://github.com/jjordy">
-          Github
-          <Github />
-        </a>
       </Sidebar>
-      <AnimatedContent pose={sidebarOpen ? "open" : "closed"}>
-        <AppContainer
-          onClick={() => {
-            if (sidebarOpen) {
-              toggleSidebar(false);
-            }
-          }}
-        >
-          <Navigation>
-            <Link to="/" getProps={activeLink}>
-              Home
-              <HomeIcon />
-            </Link>
-            <Link to="/work" getProps={activeLink}>
-              Work
-              <Desktop />
-            </Link>
-            <Link to="/contact" getProps={activeLink}>
-              Contact
-              <Envelope />
-            </Link>
-            <a href="https://github.com/jjordy">
-              Github
-              <Github style={{ fill: "white" }} />
-            </a>
-          </Navigation>
-
-          <MainContent>
-            <Flex align="center" justify="space-between">
-              <Header
-                to="/"
+      <AppContainer
+        onClick={() => {
+          if (sidebarOpen) {
+            toggleSidebar(false);
+          }
+        }}
+      >
+        <MainContent>
+          <Flex align="center" justify="space-between">
+            <MobileButton onClick={() => toggleSidebar(!sidebarOpen)}>
+              <Bars
                 style={{
-                  color: `rgb(${colorTwo.join(",")})`
+                  fill: `#CCC`
                 }}
-              >
-                JORDAN ADDISON
-              </Header>
-              <MobileButton onClick={() => toggleSidebar(!sidebarOpen)}>
-                <Bars
-                  style={{
-                    fill: `rgb(${colorTwo.join(",")})`
-                  }}
-                />
-              </MobileButton>
-            </Flex>
-            <div
-              style={{
-                height: "2px",
-                marginTop: ".5rem",
-                marginBottom: ".5rem",
-                background: `linear-gradient(-45deg, rgb(${colorOne.join(
-                  ","
-                )}), rgb(${colorTwo.join(",")}))`
-              }}
-            />
-            <strong
-              style={{
-                color: `rgba(${colorOne.join(",")})`
-              }}
-            >
-              Fullstack Web Developer
-            </strong>
-            <div style={{ marginBottom: "1rem" }} />
-            {children}
-          </MainContent>
-        </AppContainer>
-      </AnimatedContent>
-      <Footer>&copy; 2019 Jordan Addison</Footer>
+              />
+            </MobileButton>
+            <Navigation>
+                <Link to="/" onClick={() => toggleSidebar(false)} getProps={({ isCurrent}) => {
+                  return {
+                    style: {
+                      borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
+                    }
+                  }
+                }}>
+                  HOME
+                </Link>
+              <Link to="/accommodations" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
+                return {
+                  style: {
+                    borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
+                  }
+                }
+              }}>
+                      ACCOMMODATIONS
+                </Link>
+              <Link to="/rsvp" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
+                return {
+                  style: {
+                    borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
+                  }
+                }
+              }}>
+                      RSVP
+                </Link>
+            </Navigation>
+          </Flex>
+          {children}
+        </MainContent>
+      </AppContainer>
     </BodyContainer>
   );
 };

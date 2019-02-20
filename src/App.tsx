@@ -11,8 +11,8 @@ const App: React.SFC<{}> = () => {
     <Layout>
       <PosedRouter>
         <Home path="/" />
-        <Work path="/work" />
-        <Contact path="/contact" />
+        <Work path="/accommodations" />
+        <Contact path="/rsvp" />
         <NotFound default />
       </PosedRouter>
     </Layout>

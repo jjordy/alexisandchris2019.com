@@ -1,88 +1,57 @@
-import React, { useState } from "react";
+import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import posed from "react-pose";
-import { Grid, Img } from "../../components";
-import styled from "styled-components";
-import blur from "./blur.png";
-import globalfas from "./globalfas.png";
-import blur2 from "./blur-2.png";
-import blur3 from "./blur-3.png";
+import styled from 'styled-components'
+import {
+  Center,
+  Container,
+  SlideOver,
+  Header,
+  SlideUp,
+  MobileFriendlyContainer,
+  Segment,
+  Grid
+} from "../../components";
 
-export interface WorkProps extends RouteComponentProps {}
 
-const ListContainer = posed.ul({
-  enter: { staggerChildren: 50 },
-  exit: { staggerChildren: 20, staggerDirection: -1 }
-});
-
-const Item = posed.div({
-  enter: { y: 0, opacity: 1 },
-  exit: { y: 250, opacity: 0 }
-});
-
-const WorkItem = styled(Item)`
-  width: 100%;
-  border: 1px solid #e7e7e7;
-  min-height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 1px 1px 1px #e7e7e7;
-  & img {
-    background-color: #000;
-    opacity: 0.2;
-  }
-  & .header {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 1px 1px 1px #222;
-    text-transform: uppercase;
-    font-family: 'Permanent Marker', cursive;
-    padding: 1rem;
-  }
-`;
+export interface WorkProps extends RouteComponentProps { }
 
 const WorkPage: React.SFC<WorkProps> = () => {
   return (
-    <React.Fragment>
-      <h1 style={{ textAlign: "center" }}>Work and Projects</h1>
-      <h2 style={{ textAlign: "center" }}>Under construction</h2>
-      {/* <Grid width={"25%"} gap={16}>
-        <WorkItem
-          style={{
-            background: `url(${blur}) no-repeat center center fixed`,
-            backgroundSize: "cover",
-            minHeight: 200
-          }}
-        >
-          <div className="header">Globalfas.com</div>
-        </WorkItem>
-        <Item>
-          <WorkItem
-            style={{
-              background: `url(${blur2}) no-repeat center center fixed`,
-              backgroundSize: "cover",
-              minHeight: 200
-            }}
-          >
-            <div className="header">Globalfas.com</div>
-          </WorkItem>
-        </Item>
-        <Item>
-          <WorkItem
-            style={{
-              background: `url(${blur3}) no-repeat center center fixed`,
-              backgroundSize: "cover",
-              minHeight: 200
-            }}
-          >
-            <div className="header">Globalfas.com</div>
-          </WorkItem>
-        </Item>
-      </Grid> */}
-    </React.Fragment>
+    <Center style={{ minHeight: 225, textAlign: 'center' }}>
+      <Container>
+        <MobileFriendlyContainer>
+          <SlideOver>
+            <Header to='/accommodations'>
+             Accommodations
+            </Header>
+          </SlideOver>
+          <Grid width='50%' gap={24}>
+            <SlideOver>
+              <Segment>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
+              </Segment>
+            </SlideOver>
+            <SlideUp>
+              <Segment>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
+              </Segment>
+            </SlideUp>
+            <SlideUp>
+              <Segment>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
+              </Segment>
+            </SlideUp>
+            <SlideOver>
+              <Segment>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
+              </Segment>
+            </SlideOver>
+          </Grid>
+
+        </MobileFriendlyContainer>
+      </Container>
+    </Center>
+
   );
 };
 

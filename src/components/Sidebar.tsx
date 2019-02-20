@@ -17,17 +17,20 @@ const StyledSidebar = styled(AnimatedSidebar)`
   flex-direction: column;
   padding: 1rem;
   z-index: 1;
-  background: #fff;
-
+  background: #fcfcfc;
+  border-right: 1px 1px 1px #f8f8f8;
+  box-shadow: 1px 1px 1px #ccc;
   & a {
     font-size: 1.5rem;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
+    border-bottom: 2px solid rgba(8, 148, 161, 0.4);
     align-items: center;
     font-weight: 700;
     text-decoration: none;
     margin-bottom: 0.5rem;
+    font-family: 'Amatic SC', cursive;
     color: #777;
     line-height: 2rem;
     & svg {
