@@ -89,7 +89,7 @@ const Form = styled.form.attrs((props: any) => ({
 
   & button {
     padding: 1rem 2rem 1rem 2rem;
-    background-color: rgba(8, 148, 161, 0.4);
+    background-color: #000;
     margin-bottom: 1rem;
     color: #fff;
     font-weight: 700;
@@ -154,7 +154,7 @@ const ContactPage: React.SFC<ContactProps> = () => {
                         style={{
                           outline: 0,
                           boxSizing: 'border-box',
-                          background: accept ? 'green' : '#ccc' }}
+                          background: accept ? 'rgba(8, 148, 161, 0.4)' : '#ccc' }}
                       >
                         POLITELY ACCCEPT{accept && <>&#10004;</>}
                       </button>

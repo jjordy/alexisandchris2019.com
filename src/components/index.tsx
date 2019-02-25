@@ -99,6 +99,10 @@ export const Navigation = styled.nav`
   @media (max-width: 768px) {
     display: none;
   }
+
+  @media(max-width: 1440px) {
+    width: 40%;
+  }
 `;
 
 export const MobileNavigation = styled.nav`
@@ -266,3 +270,17 @@ export const Grid = styled(AnimatedContainer)`
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }`};
 `;
+
+export const Button = styled.button<{to: string}>`
+  text-decoration: none;
+  background: #000;
+  padding: 1.2rem;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+  color: #fff;
+`
+
+export const Accordian = posed.div({
+  open: { height: 'auto' },
+  closed: { height: 0 }
+})

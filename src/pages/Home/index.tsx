@@ -1,11 +1,12 @@
 import React from "react";
-import { RouteComponentProps } from "@reach/router";
+import { RouteComponentProps, Link } from "@reach/router";
 import {
   Center,
   Container,
   SlideOver,
   Header,
   SlideUp,
+  Button,
   MobileFriendlyContainer
 } from "../../components";
 
@@ -36,6 +37,9 @@ const HomePage: React.SFC<HomeProps> = () => {
               PENSACOLA, FL
             </Header>
           </SlideUp>
+        </MobileFriendlyContainer>
+        <MobileFriendlyContainer style={{ height: '20vh', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+          <SlideOver><Button as={Link} to='/accommodations'>CELEBRATE WITH US</Button></SlideOver>
         </MobileFriendlyContainer>
       </Container>
     </Center>

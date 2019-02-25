@@ -16,6 +16,9 @@ import posed from "react-pose";
 import styled from 'styled-components'
 
 const MobileFriendlyContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;

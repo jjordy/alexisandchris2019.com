@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import styled from 'styled-components'
+
 import {
   Center,
   Container,
@@ -12,35 +12,64 @@ import {
   Grid
 } from "../../components";
 
+import Map from '../../components/Map'
 
 export interface WorkProps extends RouteComponentProps { }
 
-const WorkPage: React.SFC<WorkProps> = () => {
+
+
+const WorkPage: React.SFC<WorkProps> = ({ props }: any) => {
   return (
-    <Center style={{ minHeight: 225, textAlign: 'center' }}>
-      <Container>
-        <MobileFriendlyContainer>
+    <Container style={{maxWidth: 1150, margin: 'auto'}}>
+      <MobileFriendlyContainer>
+        <Center>
           <SlideOver>
             <Header to='/accommodations'>
-             Accommodations
+              Accommodations
             </Header>
           </SlideOver>
-          <Grid width='50%' gap={24}>
-            <SlideOver>
-              <Segment>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
-              </Segment>
-            </SlideOver>
+        </Center>
+        <Grid width='50%' gap={24}>
+          <SlideOver>
+            <Segment>
+              <Map containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />} />
+            </Segment>
+          </SlideOver>
+          <div>
             <SlideUp>
-              <Segment>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi minima ut officia reiciendis. Neque iure quia aut laudantium necessitatibus vel obcaecati itaque voluptatibus quos corporis recusandae, asperiores totam, non quas?</p>
+              <Segment style={{ flex: '1 1 auto' }}>
+                <SlideUp>
+                  <Header to='/accomodations'>WHAT TO DO</Header>
+                  <p>Enjoy the 💕 of downtown Pensacola.</p>
+                  <p>Lots of Resturants Museums and Bars within walking distance.</p>
+                  <p>
+                    Enjoy the food and fairs at the{" "}
+                    <a href="https://www.pensacolaseafoodfestival.com/">Pensacola Seafood festival</a>
+                    <small><i>Note: This will increase traffic in the area please book your hotel as soon as possible to ensure you get a room in the block.</i></small>
+
+                  </p>
+                </SlideUp>
               </Segment>
             </SlideUp>
-          </Grid>
+            <SlideOver>
+              <Segment>
+                <SlideUp>
+                  <Header to='/accomodations'>WHERE TO STAY</Header>
+                  <br />
+                  <br />
+                  <a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/pensacola/pnsdt/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-PNSDT">Holiday Inn Express - Downtown Pensacola</a>
+                  <p>101 E Main street Pensacola, FL 32502<br />
+                  Block Code: MGW<br />
+                    Cut off: July 1, 2019</p>
+                </SlideUp>
+              </Segment>
+            </SlideOver>
+          </div>
+        </Grid>
 
-        </MobileFriendlyContainer>
-      </Container>
-    </Center>
+      </MobileFriendlyContainer>
+    </Container>
 
   );
 };
