@@ -59,9 +59,9 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         <Link to="/accommodations" onClick={() => toggleSidebar(false)}>
           ACCOMMODATIONS
         </Link>
-        <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
+        {/* <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
           RSVP
-        </Link>
+        </Link> */}
       </Sidebar>
       <AppContainer
         onClick={() => {
@@ -71,7 +71,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         }}
       >
         <MainContent>
-          <Flex align="center" justify="space-between">
+          <Flex align="center" >
             <MobileButton onClick={() => toggleSidebar(!sidebarOpen)}>
               <Bars
                 style={{
@@ -98,7 +98,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
               }}>
                       ACCOMMODATIONS
                 </Link>
-              <Link to="/rsvp" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
+              {/* <Link to="/rsvp" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
                 return {
                   style: {
                     borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
@@ -106,7 +106,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
                 }
               }}>
                       RSVP
-                </Link>
+                </Link> */}
             </Navigation>
           </Flex>
           {children}
