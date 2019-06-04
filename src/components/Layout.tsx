@@ -71,7 +71,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         }}
       >
         <MainContent>
-          <Flex align="center" >
+          <Flex align="center" justify="space-between">
             <MobileButton onClick={() => toggleSidebar(!sidebarOpen)}>
               <Bars
                 style={{
