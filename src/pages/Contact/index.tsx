@@ -10,10 +10,9 @@ import {
   SlideOver,
   Container,
   MobileFriendlyContainer,
-  Grid,
   Header
 } from '../../components'
-import axios from 'axios'
+
 export interface ContactProps extends RouteComponentProps { }
 
 const Segment = styled(BaseSegment)`
@@ -121,13 +120,6 @@ const ContactPage: React.SFC<ContactProps> = () => {
                   netlify
                   netlify-honeypot="bot-field"
                   method="post"
-                  onSubmit={evt => {
-                    evt.preventDefault()
-                    axios.post('/?submit-contact-form=success', {
-                      name,
-                      rsvp: accept ? 'Politely Accepts': 'Declines'
-                    })
-                  }}
                 >
                   <p className="hidden">
                     <label>
@@ -148,6 +140,7 @@ const ContactPage: React.SFC<ContactProps> = () => {
                         onChange={evt => setName(evt.target.value)}/>
                     </Item>
                     <Flex>
+                      <input type='hidden' name='rsvp' value={accept ? 'Politely Accepts' : 'Declines' } />
                       <button
                         type='button'
                         onClick={() => setAccept(true)}

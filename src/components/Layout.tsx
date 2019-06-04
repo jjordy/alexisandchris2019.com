@@ -12,39 +12,6 @@ import {
 import { Link } from "@reach/router";
 import Bars from "./Icons/BarsIcon";
 import Sidebar from "./Sidebar";
-import posed from "react-pose";
-import styled from 'styled-components'
-
-const MobileFriendlyContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction:column;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
-const DesktopLinks = styled.div`
-  & a {
-    margin-right: 1rem;
-    margin-left: 1rem;
-    text-decoration: none;
-    color: #222;
-    font-family: 'Amatic SC', cursive;
-    line-height: 2.5rem;
-    font-size: 1.5rem;
-  }
-
-  & svg {
-    width: 24px;
-    height: 24px;
-  }
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
 
 const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
   const [sidebarOpen, toggleSidebar] = useState(false);
@@ -59,9 +26,9 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         <Link to="/accommodations" onClick={() => toggleSidebar(false)}>
           ACCOMMODATIONS
         </Link>
-        {/* <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
+        <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
           RSVP
-        </Link> */}
+        </Link>
       </Sidebar>
       <AppContainer
         onClick={() => {
@@ -98,7 +65,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
               }}>
                       ACCOMMODATIONS
                 </Link>
-              {/* <Link to="/rsvp" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
+              <Link to="/rsvp" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
                 return {
                   style: {
                     borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
@@ -106,7 +73,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
                 }
               }}>
                       RSVP
-                </Link> */}
+                </Link>
             </Navigation>
           </Flex>
           {children}

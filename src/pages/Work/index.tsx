@@ -41,7 +41,7 @@ const WorkPage: React.SFC<WorkProps> = ({ props }: any) => {
               <Segment style={{ flex: '1 1 auto' }}>
                 <SlideUp>
                   <Header to='/accomodations'>WHAT TO DO</Header>
-                  <p>Enjoy the 💕 of downtown Pensacola.</p>
+                  <p>Enjoy the <span role='img' aria-label='Hearts'>💕</span> of downtown Pensacola.</p>
                   <p>Lots of Resturants Museums and Bars within walking distance.</p>
                   <p>
                     Enjoy the food and fairs at the{" "}
