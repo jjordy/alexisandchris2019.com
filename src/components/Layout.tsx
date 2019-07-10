@@ -29,7 +29,7 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
           RSVP
         </Link>
-        <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
+        <Link to="/registry" onClick={() => toggleSidebar(false)}>
           REGISTRY
         </Link>
       </Sidebar>
