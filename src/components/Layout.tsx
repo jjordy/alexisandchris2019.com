@@ -29,6 +29,9 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
         <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
           RSVP
         </Link>
+        <Link to="/rsvp" onClick={() => toggleSidebar(false)}>
+          REGISTRY
+        </Link>
       </Sidebar>
       <AppContainer
         onClick={() => {
@@ -73,6 +76,15 @@ const Layout: React.SFC<{ chlidren?: React.ReactNode }> = ({ children }) => {
                 }
               }}>
                       RSVP
+                </Link>
+              <Link to="/registry" onClick={() => toggleSidebar(false)} getProps={({ isCurrent }) => {
+                return {
+                  style: {
+                    borderBottom: isCurrent && `2px solid rgba(8, 148, 161, 0.4)`
+                  }
+                }
+              }}>
+                      REGISTRY
                 </Link>
             </Navigation>
           </Flex>

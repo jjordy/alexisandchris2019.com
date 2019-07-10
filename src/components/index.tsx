@@ -77,7 +77,7 @@ export const AppContainer = styled.div`
 
 export const Navigation = styled.nav`
   box-sizing: border-box;
-  width: 25%;
+  width: 35%;
   background: transparent;
   flex-direction: row;
   justify-content: space-between;

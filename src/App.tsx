@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { PosedRouter } from "./components";
 import Layout from "./components/Layout";
+import Registry from './pages/Registry'
 
 const App: React.SFC<{}> = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.SFC<{}> = () => {
         <Home path="/" />
         <Work path="/accommodations" />
         <Contact path="/rsvp" />
+        <Registry path='/registry' />
         <NotFound default />
       </PosedRouter>
     </Layout>
