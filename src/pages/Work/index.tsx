@@ -61,7 +61,7 @@ const WorkPage: React.SFC<WorkProps> = ({ props }: any) => {
                   <a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/pensacola/pnsdt/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-PNSDT">Holiday Inn Express - Downtown Pensacola</a>
                   <p>101 E Main street Pensacola, FL 32502<br />
                   Block Code: MGW<br />
-                    Cut off: July 1, 2019</p>
+                    Cut off: July 27th, 2019</p>
                 </SlideUp>
               </Segment>
             </SlideOver>
